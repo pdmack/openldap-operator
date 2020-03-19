@@ -1,0 +1,45 @@
+affinity: {}
+env:
+  LDAP_BACKEND: hdb
+  LDAP_DOMAIN: example.org
+  LDAP_ORGANISATION: Example Inc.
+  LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
+  LDAP_TLS: "true"
+  LDAP_TLS_ENFORCE: "false"
+existingSecret: ""
+extraLabels: {}
+image:
+  pullPolicy: IfNotPresent
+  repository: osixia/openldap
+  tag: 1.2.4
+initResources: {}
+nodeSelector: {}
+persistence:
+  accessMode: ReadWriteOnce
+  enabled: false
+  size: 8Gi
+podAnnotations: {}
+replicaCount: 1
+resources: {}
+service:
+  annotations: {}
+  clusterIP: ""
+  externalIPs: []
+  ldapPort: 389
+  loadBalancerIP: ""
+  loadBalancerSourceRanges: []
+  sslLdapPort: 636
+  type: ClusterIP
+strategy: {}
+test:
+  enabled: false
+  image:
+    repository: dduportal/bats
+    tag: 0.4.0
+tls:
+  CA:
+    enabled: false
+    secret: ""
+  enabled: false
+  secret: ""
+tolerations: []
